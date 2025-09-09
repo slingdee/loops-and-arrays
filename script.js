@@ -1,4 +1,5 @@
-                // for ... of loop
+          // LOOPS
+          // for ... of loop
 
   function toUpper(string){
     return string.toUpperCase()
@@ -47,8 +48,8 @@ console.log(upperCats)
    calculateBtn.addEventListener("click", calculate);
    clearBtn.addEventListener("click", () => (results.textContent = ""));
 
-   
-  
+
+       // Using break, to break out of a loop
    const contacts = [
     "Chris:2232322",
     "Sarah:3453456",
@@ -70,7 +71,7 @@ console.log(upperCats)
       const splitContact = contact.split(":");
       if(splitContact[0].toLowerCase()=== searchName){
         para.textContent = `${splitContact[0]}'s number is ${splitContact[1]}`;
-        break
+        break // immediately exit the loop and make the browser go on to any code that follows
       }
     }
      if(para.textContent === ""){
@@ -78,4 +79,54 @@ console.log(upperCats)
      }
   });
 
+  // Skipping iterations with , continue statement.
 
+
+  const outputPara = document.querySelector("#outputPara");
+  const numberInput = document.querySelector("#numberInput");
+  const generatorBtn = document.querySelector("#generatorBtn");
+
+  generatorBtn.addEventListener("click", () => {
+    outputPara.textContent = "Output: ";
+    const num = numberInput.value;
+    numberInput.value = "";
+    numberInput.focus();
+    for (let i = 1; i <= num; i++) {
+      let sqRoot = Math.sqrt(i);
+      if (Math.floor(sqRoot) !== sqRoot) {
+        continue;
+      }
+      outputPara.textContent += `${i} `;
+    }
+  });
+
+              // ARRAYS
+// An array is an ordered collection of items(strings, numbers, etc)
+
+let fruits = ["Apple", "Orange", "Plum"];
+
+fruits[2] = "Pear"; // this replaces plum
+fruits[3] = "Lemon"; //adds lemon to the array
+console.log(fruits)
+
+// last index in an array = array.length - 1 or array.at(-1)
+console.log(fruits.at(-1));
+
+              // Array methods
+/*  Push - adds an element to the end
+    pop - takes an element from the end
+    shift - extracts the first element of the array and returns it.
+    unshift - adds an element to the beginning of the array
+*/
+fruits.push("banana")
+console.log(fruits)
+console.log(fruits.pop())
+
+              //multidimensional arrays
+// Arrays can have items that are also arrays.
+let matrix = [
+  [1,2,3],
+  [4,5,6],
+  [7,8,9]
+];
+console.log(matrix[0][1]);
